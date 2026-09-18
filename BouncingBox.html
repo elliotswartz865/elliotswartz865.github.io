@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 262px;
+            top: 262px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id='something'
+        src="https://tse3.mm.bing.net/th/id/OIP.nbksa0HpVtln72aXD-57rwHaFP?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+</body>
+
+</html>
+<script>
+    let x = 262;
+    let y = 262;
+    let x_direction = -1
+    let y_direction=1
+    setInterval(moveBox, 16)
+    document.getElementById('something').style.left = x + "px";
+    document.getElementById('something').style.top = y + "px";
+    function moveBox() {
+        y = y + y_direction
+        x = x + x_direction
+        document.getElementById('something').style.top = y + "px"
+        document.getElementById('something').style.left = x + "px"
+        if(x<0){
+          x_direction= 1
+        }
+         if(y<0){
+          y_direction= 1
+        } 
+         if(x>1000){
+          x_direction= -1
+        }
+         if(y>500){
+          y_direction= -1
+        }
+        moveBoxTo(boardWidth);
+        //if the box touches walls box===change direction
+    }
+
+
+</script>
